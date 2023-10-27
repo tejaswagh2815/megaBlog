@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const authStatus = useSelector((state) => state.auth.status);
   const navigate = useNavigate();
+
   const navItems = [
     {
       name: "Home",
@@ -33,6 +34,7 @@ const Header = () => {
       active: authStatus,
     },
   ];
+
   return (
     <header className="py-3 shadow bg-gray-500">
       <Container>
@@ -50,7 +52,7 @@ const Header = () => {
                     className="inline-bock px-6 py-2 duration-200 hover:bg-blue-200 rounded-full"
                     onClick={() => navigate(item.slug)}
                   >
-                    {item}
+                    {item.name}
                   </button>
                 </li>
               ) : null
